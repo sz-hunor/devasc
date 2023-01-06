@@ -9,10 +9,10 @@ def play():
         return True
     else:
         evaluate(choices)
-        if again() == "again":
-            return True
-        else:
-            return False
+    if again() == "again":
+        return True
+    else:
+        return False
 
 
 def validate(choices):
