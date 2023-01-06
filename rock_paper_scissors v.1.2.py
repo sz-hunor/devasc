@@ -8,7 +8,8 @@ def play():
     if validate(choices) == "not valid":
         return True
     else:
-        if evaluate(choices) == "again":
+        evaluate(choices)
+        if again() == "again":
             return True
         else:
             return False
@@ -33,7 +34,6 @@ def evaluate(choices):
         print(f"scissors defeats paper, {player['scissors']} wins")
     else:
         print("it's a draw")
-    return again()
 
 
 def again():
