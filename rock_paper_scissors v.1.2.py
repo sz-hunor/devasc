@@ -38,7 +38,7 @@ def evaluate(choices):
 
 def again():
     while True:
-        replay = input("would you like yo play again? (Y/N):").lower()
+        replay = input("would you like to play again? (Y/N):").lower()
         if replay == 'y':
             return "again"
         elif replay == 'n':
