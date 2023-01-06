@@ -1,3 +1,9 @@
+"""Due to the maximum recursion rule of python, it is preferable to use a while loop for a piece of code that
+might repeat rather than recursively calling the same function from within the function
+While you may think "no fool would make 1000 mistakes in a row" don't underestimate the ingenuity of fools
+This code forms circular recursion between the play() and again() functions if the game is played enough times"""
+
+
 def play():
     x = input("Player1: rock, paper or scissors?:")
     y = input("Player2: rock, paper or scissors?:")
