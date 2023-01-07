@@ -8,6 +8,7 @@ using an external function and then use itertools.islice() to capture the slice 
 This creates a generator object that can then be force evaluated using the list() constructor
 """
 
+
 def is_prime(x):
     if x > 2:
         for n in range(2, x):

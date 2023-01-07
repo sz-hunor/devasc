@@ -15,7 +15,7 @@ def play():
 
 def validate(x):
     if len(set(x).intersection({'rock', 'paper', 'scissors'})) == 0:
-        print ("only rock, paper and scissors are valid options")
+        print("only rock, paper and scissors are valid options")
         return False
     else:
         return True

@@ -1,7 +1,7 @@
 """"rock/paper/scissors version without any circular recursion and with what seems to me decently understandable code"""
 
 
-def rock_paper_scissors():
+def play():
     choices = {}
     choices.update({"player 1": input("Player1: rock, paper or scissors?:").lower()})
     choices.update({"player 2": input("Player2: rock, paper or scissors?:").lower()})
@@ -46,5 +46,5 @@ def new_game():
             continue
 
 
-while rock_paper_scissors():
+while play():
     pass
