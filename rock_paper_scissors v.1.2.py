@@ -1,5 +1,4 @@
-""""rock/paper/scissors version without any circular recursion and with what seems to me decently understandable
-code"""
+""""rock/paper/scissors version without any circular recursion and with what seems to me decently understandable code"""
 
 
 def rock_paper_scissors():
