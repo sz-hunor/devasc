@@ -2,52 +2,50 @@
 code"""
 
 
-def play():
-    choices = {"player 1": input("Player1: rock, paper or scissors?:").lower()}
+def rock_paper_scissors():
+    choices = {}
+    choices.update({"player 1": input("Player1: rock, paper or scissors?:").lower()})
     choices.update({"player 2": input("Player2: rock, paper or scissors?:").lower()})
-    if validate(choices) == "not valid":
+    if invalid_choices(choices):
         return True
     else:
-        evaluate(choices)
-    if again() == "again":
-        return True
-    else:
-        return False
+        declare_winner(choices)
+        return new_game()
 
 
-def validate(choices):
+def invalid_choices(choices):
     valid = ['rock', 'paper', 'scissors']
     if choices["player 1"] in valid and choices["player 2"] in valid:
-        return
+        return False
     else:
         print("only rock, paper and scissors are valid options")
-        return "not valid"
+        return True
 
 
-def evaluate(choices):
+def declare_winner(choices):
     player = {v: k for k, v in choices.items()}
     choices = {choices["player 1"], choices["player 2"]}
-    if len(choices.intersection({'rock', 'paper'})) == 2:
+    if choices == {'rock', 'paper'}:
         print(f"paper defeats rock, {player['paper']} wins")
-    elif len(choices.intersection({'rock', 'scissors'})) == 2:
+    elif choices == {'rock', 'scissors'}:
         print(f"rock defeats scissors, {player['rock']} wins")
-    elif len(choices.intersection({'paper', 'scissors'})) == 2:
+    elif choices == {'paper', 'scissors'}:
         print(f"scissors defeats paper, {player['scissors']} wins")
     else:
         print("it's a draw")
 
 
-def again():
+def new_game():
     while True:
-        replay = input("would you like to play again? (Y/N):").lower()
+        replay = input("would you like to play again? (y/n):").lower()
         if replay == 'y':
-            return "again"
+            return True
         elif replay == 'n':
-            return
+            return False
         else:
             print("only 'y' and 'n' are valid options")
             continue
 
 
-while play():
+while rock_paper_scissors():
     pass
