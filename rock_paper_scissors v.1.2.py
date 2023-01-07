@@ -26,11 +26,12 @@ def validate(choices):
 
 def evaluate(choices):
     player = {v: k for k, v in choices.items()}
-    if len({choices["player 1"], choices["player 2"]}.intersection({'rock', 'paper'})) == 2:
+    choices = {choices["player 1"], choices["player 2"]}
+    if len(choices.intersection({'rock', 'paper'})) == 2:
         print(f"paper defeats rock, {player['paper']} wins")
-    elif len({choices["player 1"], choices["player 2"]}.intersection({'rock', 'scissors'})) == 2:
+    elif len(choices.intersection({'rock', 'scissors'})) == 2:
         print(f"rock defeats scissors, {player['rock']} wins")
-    elif len({choices["player 1"], choices["player 2"]}.intersection({'paper', 'scissors'})) == 2:
+    elif len(choices.intersection({'paper', 'scissors'})) == 2:
         print(f"scissors defeats paper, {player['scissors']} wins")
     else:
         print("it's a draw")
