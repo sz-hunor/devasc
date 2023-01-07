@@ -5,7 +5,7 @@ def play():
     choices = {}
     choices.update({"player 1": input("Player1: rock, paper or scissors?:").lower()})
     choices.update({"player 2": input("Player2: rock, paper or scissors?:").lower()})
-    if not valid_choices(choices):
+    if valid_choices(choices) is False:
         return True
     else:
         declare_winner(choices)
