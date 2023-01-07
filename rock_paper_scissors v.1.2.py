@@ -5,23 +5,23 @@ def rock_paper_scissors():
     choices = {}
     choices.update({"player 1": input("Player1: rock, paper or scissors?:").lower()})
     choices.update({"player 2": input("Player2: rock, paper or scissors?:").lower()})
-    if invalid_choices(choices):
+    if not valid_choices(choices):
         return True
     else:
         declare_winner(choices)
         return new_game()
 
 
-def invalid_choices(choices):
+def valid_choices(choices: dict):
     valid = ['rock', 'paper', 'scissors']
     if choices["player 1"] in valid and choices["player 2"] in valid:
-        return False
+        return True
     else:
         print("only rock, paper and scissors are valid options")
-        return True
+        return False
 
 
-def declare_winner(choices):
+def declare_winner(choices: dict):
     player = {v: k for k, v in choices.items()}
     choices = {choices["player 1"], choices["player 2"]}
     if choices == {'rock', 'paper'}:
